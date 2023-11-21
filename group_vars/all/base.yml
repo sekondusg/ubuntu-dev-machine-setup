@@ -88,14 +88,14 @@ base_developer_tools:
   - most
   - mssh
   - ncat
-  - netcat
+  - netcat-traditional
   - nmap
   - nmon
   - nodejs
   - pandoc
   - parallel
   - pcre2-utils  # provides pcre2grep and pcre2test (perl-compatible regex)
-  - pep8
+  - python3-pep8
   - powerline
   - pry
   - pssh
