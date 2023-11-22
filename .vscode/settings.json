@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/meta.json": "file:///home/dennis/Google/Config/ubuntu-dev-machine-setup/main.yml"
+    }
+}

@@ -1,0 +1,11 @@
+- name: Install Blender
+  community.general.snap:
+    name: blender
+    channel: latest/edge
+    classic: true
+
+- name: Install Obsidian
+  community.general.snap:
+    name: obsidian
+    channel: latest/edge
+    classic: true

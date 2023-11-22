@@ -5,22 +5,23 @@
 This repo contains Ansible playbooks to configure your system as a development machine upon a clean install.
 
 The playbooks should run in Debian based system but was only tested with:
+
 - **Ubuntu 22.04**
-- **Pop!_OS 22.04**
+- **Pop!\_OS 22.04**
 
 For other versions of Ubuntu, change to the other branches of this git repo. Other versions include Ubuntu 18.04 LTS and 20.04 LTS.
 
 ![bullet-train-zsh-theme](.images/screenshot-bullet-train.png)
 
-Screenshot above is using *bullet-train zsh theme*
+Screenshot above is using _bullet-train zsh theme_
 
 ![pure-zsh-theme](.images/screenshot-pure.png)
 
-Screenshot above is using *pure zsh theme*
+Screenshot above is using _pure zsh theme_
 
 ![p10k-zsh-theme-tmux](.images/screenshot-p10k-tmux.png)
 
-Screenshot above is using *p10k zsh theme with tmux*
+Screenshot above is using _p10k zsh theme with tmux_
 
 ---
 
@@ -100,6 +101,11 @@ You need to install `ansible` and `git` before running the playbooks. You can ei
 /usr/bin/sudo apt install ansible git -y
 ```
 
+Install the Ansible Galaxy community.general collection if it's not installed
+```bash
+ansible-galaxy collection install community.general
+```
+
 And clone this repo (do not clone in `/tmp` as this dir is cleaned and mounted in tmpfs)
 
 ```bash
@@ -143,12 +149,12 @@ After all is done, give your laptop a new life by rebooting.
 
 ## Pull Requests and Forks
 
-You are more than welcome to send any pull requests. However, the intention of this repo is to suit my development needs. So it might be better if you *fork* this repo instead for your own needs and personalization.
+You are more than welcome to send any pull requests. However, the intention of this repo is to suit my development needs. So it might be better if you _fork_ this repo instead for your own needs and personalization.
 
 ---
 
 ## Donations
 
-If you think my work helped you in some way saving you time and effort, I am happy to receive any amount of donation. However, the code in this repo is completely free; absolutely *no strings attached*.
+If you think my work helped you in some way saving you time and effort, I am happy to receive any amount of donation. However, the code in this repo is completely free; absolutely _no strings attached_.
 
 Bitcoin (BTC): `bc1qzlhpm94vtk2ht67etdutzcy2g5an5v6g36tp0m`

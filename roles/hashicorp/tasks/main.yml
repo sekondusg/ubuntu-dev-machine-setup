@@ -10,7 +10,7 @@
     repo: "{{ hashicorp_repo_jammy }}"
     state: present
     filename: hashicorp
-  when: ansible_distribution_release == "jammy"
+  when: ansible_distribution_release == "mantic"
 
 - name: prioritize packages from hashicorp apt repo
   ansible.builtin.copy:
