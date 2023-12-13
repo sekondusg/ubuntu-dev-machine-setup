@@ -16,10 +16,12 @@ base_archiving_tools:
   - zip
 
 base_productivity_tools:
-  - libreoffice
+#  - libreoffice
 
 base_system_tools:
+  - cifs-utils 
   - fatrace
+  - gnome-tweaks
   - fdupes
   - gnome-calculator
   - gufw
@@ -65,6 +67,7 @@ base_developer_tools:
   - exa
   - expect
   - filezilla
+  - freecad
   - fonts-powerline
   - fzf
   - g++
@@ -72,21 +75,27 @@ base_developer_tools:
   - gedit-plugins
   - geoip-bin
   - ghostwriter
+  - gimp
   - git
   - git-extras
   - gitg
   - golang-go
+  - graphviz
   - htop
   - httpie
+  - inkscape
   - inotify-tools
   - ipython3
   - jq
+  - kicad
   - kwalify
   - makeself
   - meld
   - micro  # the micro editor
   - miller
   - moreutils
+  - mosquitto
+  - mosquitto-client
   - most
   - mssh
   - ncat
@@ -94,6 +103,8 @@ base_developer_tools:
   - nmap
   - nmon
   - nodejs
+  - openssh-server
+  - openvpn
   - pandoc
   - parallel
   - pcre2-utils  # provides pcre2grep and pcre2test (perl-compatible regex)
@@ -118,14 +129,18 @@ base_developer_tools:
   - remmina
   - rename
   - ripgrep  # launch using rg from the cli
+  - rpi-imager
   - ruby
   - ruby-dev
+  - samba
   - shellcheck
   - siege
   - socat
+  - spacenavd
   - sshfs
   - sshpass
   - sshuttle
+  - steam:i386
   - tig
   - tilix
   - tmux
@@ -133,6 +148,8 @@ base_developer_tools:
   - tree
   - uget
   - xclip
+  - xournal
+  - xsel
   - yamllint
   - zeal
 

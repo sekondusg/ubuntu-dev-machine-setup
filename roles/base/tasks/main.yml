@@ -122,6 +122,25 @@
   become_user: "{{ local_username }}"
 
 - block:
+  - name: Share Autokey config
+    ansible.builtin.lineinfile:
+      src: "~{{ local_username }}/Google/Config/Autokey"
+      dest: "~{{ local_username }}/.config/autokey"
+      state: link
+  - name: Share PrusaSlicer config
+    ansible.builtin.lineinfile:
+      src: "~{{ local_username }}/Google/Config/PrusaSlicer"
+      dest: "~{{ local_username }}/.config/PrusaSlicer"
+      state: link
+  - name: Share FreeCAD config
+    ansible.builtin.lineinfile:
+      src: "~{{ local_username }}/Google/Config/FreeCAD"
+      dest: "~{{ local_username }}/.config/FreeCAD"
+      state: link
+  become: yes
+  become_user: "{{ local_username }}"
+
+- block:
     - name: Create directories for golang
       ansible.builtin.file:
         path: "~{{ local_username }}/{{ item }}"
