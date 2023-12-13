@@ -49,6 +49,7 @@ base_developer_tools:
   - android-tools-fastboot
   - ansible
   - ansible-lint
+  - autokey-qt
   - awscli
   - bat
   - bpython
@@ -83,6 +84,7 @@ base_developer_tools:
   - kwalify
   - makeself
   - meld
+  - micro  # the micro editor
   - miller
   - moreutils
   - most

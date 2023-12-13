@@ -39,10 +39,10 @@ Summary of packages that get installed and configured based on roles:
   - tune system swappiness so that swapping is greatly reduced
   - upgrade all packages
   - install archiving tools like zip, rar, etc
-  - install libreoffice
+  - ~~install libreoffice~~ - *Not needed*
   - install power management tools like [TLP](https://github.com/linrunner/TLP)
   - install development related packages like android-tools, awscli, httpie, clusterssh, docker, filezilla, golang, pipenv, etc
-  - setup golang directories
+  - ~~setup golang directories~~ - *Not needed*
   - install download tools like axel, transmission, wget, aria2
   - install image, audio and video packages like vlc, totem, gimp, imagemagick, etc
   - install virtualization tools like virtualbox, docker, docker-compose
@@ -58,11 +58,13 @@ Summary of packages that get installed and configured based on roles:
   - copy and enable sample `~/.tmux.conf` file with powerline status bar and mouse support!
     - open Tilix terminal and run `tmux` command, or enable custom command option in Tilix
     - edit `~/.tmux.conf` if necessary
-- **role: vim**
+- **~~role: vim~~** - *Not needed*
   - install vim packages
   - install amix/vimrc vim distribution
   - create sample vim customization file in `~/.vim_runtime/my_configs.vim`
     - additional vim settings are enabled in `~/.vim_runtime/my_configs.vim` which are not part of the Vim Distribution. Edit this file if necessary.
+~~
+
 - **role: zsh**
   - install zsh package and set user shell to zsh
   - install antigen zsh plugin manager
