@@ -1,0 +1,7 @@
+- name: "Playing with Ansible"
+  hosts: localhost
+  tasks:
+  - name: "Playing with variables"
+    command: echo "{{ ansible_facts.lsb.codename }}"
+    register: output
+  - debug: var=output.stdout_lines

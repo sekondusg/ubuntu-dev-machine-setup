@@ -95,7 +95,7 @@ base_developer_tools:
   - miller
   - moreutils
   - mosquitto
-  - mosquitto-client
+  - mosquitto-clients
   - most
   - mssh
   - ncat
@@ -140,7 +140,7 @@ base_developer_tools:
   - sshfs
   - sshpass
   - sshuttle
-  - steam:i386
+  - steam
   - tig
   - tilix
   - tmux
