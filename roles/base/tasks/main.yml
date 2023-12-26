@@ -60,9 +60,8 @@
 
 - name: add multiverse to apt 
   ansible.builtin.apt_repository:
-    repo: "{{ item }}"
-  loop:
-    - "deb http://archive.ubuntu.com/ubuntu/ {{ ansible_facts.lsb.codename }} universe"
+    repo: "deb http://archive.ubuntu.com/ubuntu/ {{ ansible_facts.lsb.codename }} universe"
+    update_cache: true
 
 - name: perform a dist upgrade
   ansible.builtin.apt:
@@ -123,7 +122,8 @@
   ansible.builtin.file:
     path: "~{{ local_username }}/.ssh"
     state: directory
-    mode: '0700'
+    mode: 'go-rwx'
+    # mode: '0700'
   become: yes
   become_user: "{{ local_username }}"
 
