@@ -122,7 +122,8 @@
   ansible.builtin.file:
     path: "~{{ local_username }}/.ssh"
     state: directory
-    mode: 'go-rwx'
+    #mode: 'go-rwx'
+    mode: 'u=rwx,g=,o='
     # mode: '0700'
   become: yes
   become_user: "{{ local_username }}"
