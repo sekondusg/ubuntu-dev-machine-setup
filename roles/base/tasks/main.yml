@@ -35,7 +35,7 @@
 
 - name: enable ufw firewall
   community.general.ufw:
-    state: enabled
+    state: disabled
 
 - name: disable system crash reports
   ansible.builtin.lineinfile:
@@ -122,9 +122,7 @@
   ansible.builtin.file:
     path: "~{{ local_username }}/.ssh"
     state: directory
-    #mode: 'go-rwx'
-    mode: 'u=rwx,g=,o='
-    # mode: '0700'
+    mode: '0700'
   become: yes
   become_user: "{{ local_username }}"
 
