@@ -35,7 +35,7 @@
 
 - name: enable ufw firewall
   community.general.ufw:
-    state: enabled
+    state: disabled
 
 - name: disable system crash reports
   ansible.builtin.lineinfile:
