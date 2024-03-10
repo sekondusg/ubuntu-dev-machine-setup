@@ -120,7 +120,7 @@ cd ubuntu-dev-machine-setup
 **Invoke the following as yourself, the primary user of the system. Do not run as `root`.**
 
 ```bash
-ansible-playbook main.yml -vv -e "{ laptop_mode: True }" -e "local_username=$(id -un)" -K
+ansible-playbook main.yml -vv -e "local_username=$(id -un)" -K
 ```
 
 Enter the sudo password when asked for `BECOME password:`.
