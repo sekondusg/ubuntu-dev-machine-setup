@@ -122,8 +122,7 @@
   ansible.builtin.file:
     path: "~{{ local_username }}/.ssh"
     state: directory
-    mode: '0700'
-  become: yes
+    mode: 'u=rwx,g=,o='
   become_user: "{{ local_username }}"
 
 - block:
@@ -142,7 +141,6 @@
       src: "~{{ local_username }}/Google/Config/FreeCAD"
       dest: "~{{ local_username }}/.config/FreeCAD"
       state: link
-  become: yes
   become_user: "{{ local_username }}"
 
 - block:
@@ -163,7 +161,6 @@
       with_items:
         - export GOPATH=$HOME/go
         - export PATH=$PATH:$GOPATH/bin
-  become: yes
   become_user: "{{ local_username }}"
 
 - name: install download tools
@@ -212,7 +209,6 @@
     - { key: 'night-light-temperature', value: "{{ base_permanent_night_light.night_light_temperature }}" }
 
   when: base_permanent_night_light.night_light_enabled
-  become: yes
   become_user: "{{ local_username }}"
 
 # make fstrim run daily rather than the default weekly schedule for SSD longevity
@@ -245,7 +241,6 @@
 
 - name: make poetry create virtualenv dirs inside the project dir itself
   ansible.builtin.command: "poetry config virtualenvs.in-project true"
-  become: yes
   become_user: "{{ local_username }}"
 
 ...
