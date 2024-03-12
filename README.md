@@ -33,7 +33,9 @@ Summary of packages that get installed and configured based on roles:
 
 - **role: base**
   - mount `/tmp` on tmpfs (reduce SSD read writes and increase SSD lifespan; no leftover files on system shutdown)
-  - set default system editor to vim instead of nano
+  - TODO: Switch to a better editor -- set default system editor to vim instead of nano
+  - TODO: install Anne Pro II Keyboard ObinsKit (obinskit)
+  - TODO: install prusaslicer and configs
   - enable ufw firewall and install ufw graphical frontend gufw
   - disable system crash reports
   - tune system swappiness so that swapping is greatly reduced
@@ -46,7 +48,7 @@ Summary of packages that get installed and configured based on roles:
   - install download tools like axel, transmission, wget, aria2
   - install image, audio and video packages like vlc, totem, gimp, imagemagick, etc
   - install virtualization tools like virtualbox, docker, docker-compose
-  - install and configure ssh server if not set to `laptop_mode`
+  - TODO: What is laptop_mode -- install and configure ssh server if not set to `laptop_mode` 
   - option to turn on night light settings for eye comfort (set `base_permanent_night_light.night_light_enabled` to `True`)
   - enable `fzf` fuzzy finder in zsh terminal; check out this [YouTube video](https://www.youtube.com/watch?v=1a5NiMhqAR0) to see how to use it
 - **role: hashicorp**
@@ -80,13 +82,17 @@ Summary of packages that get installed and configured based on roles:
   - install Visual Studio Code
   - install some popular Visual Studio Code extensions
 - **role: privacy**
-  - install tor
-  - configure tor to run at boot and prevent using certain countries as exit nodes
+  - TODO: configure Gnome keyring to store main passwords and copy keys
+  - TODO: configure gpg-preset-passphrase to seed gpg-agent with passphrases. See: https://www.gnupg.org/documentation/manuals/gnupg/gpg_002dpreset_002dpassphrase.html
+  - TODO: install Yubikey tool
+  - TODO: configure GPG defaults to use AES256 as the cipher algorithm
+  - TODO: configure default SSH keys
+  - TODO: Not needed -- configure tor to run at boot and prevent using certain countries as exit nodes
     - edit `/etc/tor/torrc` if necessary
-  - install proxychains
-  - configure proxychains to use tor. View [my Medium story](https://fazlearefin.medium.com/tunneling-traffic-over-tor-network-using-proxychains-34c77ec32c0f) to see how to use it
+  - TODO: Not needed -- install proxychains
+  - TODO: Not needed -- configure proxychains to use tor. View [my Medium story](https://fazlearefin.medium.com/tunneling-traffic-over-tor-network-using-proxychains-34c77ec32c0f) to see how to use it
     - edit `/etc/proxychains4.conf` if necessary
-  - install metadata anonymization toolkit
+  - TODO: Not needed -- install metadata anonymization toolkit
 - **role: security**
   - install ClamAV (antivirus) and ClamAV GNOME interface. Manual scan from nautilus or from CLI using `clamscan`; clamd not installed for its huge memory footprint
 
