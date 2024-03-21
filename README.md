@@ -33,10 +33,11 @@ Summary of packages that get installed and configured based on roles:
 
 - **role: base**
   - mount `/tmp` on tmpfs (reduce SSD read writes and increase SSD lifespan; no leftover files on system shutdown)
-  - TODO: Switch to a better editor -- set default system editor to vim instead of nano
+  - TODO: Switch to micro editor with emacs keybindings -- set default system editor to vim instead of nano
   - TODO: install Anne Pro II Keyboard ObinsKit (obinskit)
   - TODO: install prusaslicer and configs
-  - enable ufw firewall and install ufw graphical frontend gufw
+  - TODO: selectivly enable ufw firewall and install ufw graphical frontend gufw
+  - TODO: Add PAM updates for optimizing NFS homedirs
   - disable system crash reports
   - tune system swappiness so that swapping is greatly reduced
   - upgrade all packages

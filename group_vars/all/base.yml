@@ -27,6 +27,7 @@ base_system_tools:
   - gufw
   - progress
   - pwgen
+  - nfs-common
   #- syncthing
 
 base_system_tools_laptop:

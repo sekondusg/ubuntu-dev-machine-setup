@@ -1,0 +1,58 @@
+---
+
+# configure network file system (NFS)
+- block:
+    - name: Create local home directory config space for NFS mounted homedirs
+      ansible.builtin.copy:
+        src: usr/local/sbin/create-local-homedir.sh
+        dest: /usr/local/sbin/create-local-homedir.sh
+        owner: root
+        group: root
+        mode: 0755
+    - name: Create local home directory config space for NFS mounted homedirs
+      ansible.builtin.copy:
+        src: etc/security/pam_env_xdg.conf
+        dest: /etc/security/pam_env_xdg.conf
+        owner: root
+        group: root
+        mode: 0644
+    - name: add GDM entry for local caching and settings
+      ansible.builtin.lineinfile:
+        path: /etc/pam.d/gdm-password
+        regexp: 'create-local-homedir.sh$'
+        line: 'auth        optional      pam_exec.so /usr/local/sbin/create-local-homedir.sh'
+        insertbefore: 'pam_gnome_keyring.so$'
+    - name: add GDM entry for local caching and settings
+      ansible.builtin.lineinfile:
+        path: /etc/pam.d/gdm-password
+        regexp: 'pam_env_xdg.conf$'
+        line: 'auth        optional      pam_env.so conffile=/etc/security/pam_env_xdg.conf'
+        insertbefore: 'pam_gnome_keyring.so$'
+
+    - name: add SSH entry for local caching and settings
+      ansible.builtin.lineinfile:
+        path: /etc/pam.d/sshd
+        regexp: 'create-local-homedir.sh$'
+        line: 'session    optional     pam_exec.so /usr/local/sbin/create-local-homedir.sh'
+        insertafter: 'revoke$'
+    - name: add SSH entry for local caching and settings
+      ansible.builtin.lineinfile:
+        path: /etc/pam.d/sshd
+        regexp: 'pam_env_xdg.conf$'
+        line: 'session    optional     pam_env.so conffile=/etc/security/pam_env_xdg.conf'
+        insertafter: 'revoke$'
+
+    - name: add nfs volume directory to local mountable filesystems
+      ansible.builtin.lineinfile:
+        path: /etc/fstab
+        state: present
+        regexp: '^ephesius:/vol'
+        line: 'ephesius:/vol   /vol            nfs     rsize=8192,wsize=8192,timeo=14,intr'
+    - name: add nfs home directory to local mountable filesystems
+      ansible.builtin.lineinfile:
+        path: /etc/fstab
+        state: present
+        regexp: '^ephesius:/home'
+        line: 'ephesius:/home   /home            nfs     rsize=8192,wsize=8192,timeo=14,intr'
+
+...
